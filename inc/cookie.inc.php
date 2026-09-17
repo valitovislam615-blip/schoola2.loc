@@ -13,7 +13,6 @@ if (isset($_COOKIE['lastVisit'])) {
     $lastVisit = date('d-m-Y H:i:s', $_COOKIE['lastVisit']);
 }
 
-// Условие: обновляем lastVisit и visitCounter только если зашли в другой день
 if (!isset($_COOKIE['lastVisit']) || date('d-m-Y', $_COOKIE['lastVisit']) != date('d-m-Y')) {
     setcookie('visitCounter', $visitCounter, time() + 3600 * 24 * 30);
     setcookie('lastVisit', time(), time() + 3600 * 24 * 30);
